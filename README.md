@@ -7,7 +7,7 @@ Import a color scheme to you project. Don't care about the CSS and don't care ab
 ## Usage/Examples
 
 ```css
-@import 'https://colors.distur.be/<scheme>/<color>';
+@import 'https://colors.gutuxe.de/<scheme>/<color>';
 ```
 
 ### Scheme
