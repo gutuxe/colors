@@ -1,0 +1,16 @@
+{
+  "name": "disturbe",
+  "version": "1.0.0",
+  "description": "Delivers custom css color schemes",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Moritz Gut <prog@moritzgvt.de>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1",
+    "fs": "^0.0.1-security"
+  }
+}
