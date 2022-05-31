@@ -5,6 +5,7 @@ const { config } = require('./config');
 const template = {
   complementary: require('./schemes/complementary/complementary'),
   analogous: require('./schemes/analogous/analogous'),
+  triadic: require('./schemes/triadic/triadic'),
   shades: require('./schemes/shades/shades')
 }
 
@@ -16,7 +17,7 @@ const scheme = {
       if (template[schemeName]) {
         await template[schemeName].prepareNewColorScheme(schemeName, loneColor);
       } else {
-        throw new Error('Scheme not found');
+        throw new Error('Scheme not found: ' + schemeName);
       }
     }
 

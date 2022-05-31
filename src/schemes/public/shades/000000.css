@@ -1,0 +1,52 @@
+:root {
+  --dbe-base-color-000000: #000000;
+  --dbe-base-color-000000-h: 0;
+  --dbe-base-color-000000-s: 0%;
+  --dbe-base-color-000000-l: 0%;
+
+  --dbe-shade-000000-1: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s),
+    10%
+  );
+  --dbe-shade-000000-2: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s),
+    20%
+  );
+  --dbe-shade-000000-3: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s),
+    30%
+  );
+  --dbe-shade-000000-4: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s),
+    40%
+  );
+  --dbe-shade-000000-5: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s),
+    50%
+  );
+  --dbe-shade-000000-6: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s),
+    60%
+  );
+  --dbe-shade-000000-7: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s),
+    70%
+  );
+  --dbe-shade-000000-8: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s),
+    80%
+  );
+  --dbe-shade-000000-9: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s),
+    90%
+  );
+}

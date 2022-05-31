@@ -1,0 +1,186 @@
+:root {
+  --dbe-base-color-000000: #000000;
+  --dbe-base-color-000000-h: 0;
+  --dbe-base-color-000000-s: 0%;
+  --dbe-base-color-000000-l: 0%;
+
+  --dbe-primary-color-1: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s), 
+    10%
+  );
+
+  --dbe-primary-color-2: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s), 
+    20%
+  );
+
+  --dbe-primary-color-3: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s), 
+    30%
+  );
+
+  --dbe-primary-color-4: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s), 
+    40%
+  );
+
+  --dbe-primary-color-5: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s), 
+    50%
+  );
+
+  --dbe-primary-color-6: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s), 
+    60%
+  );
+
+  --dbe-primary-color-7: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s), 
+    70%
+  );
+
+  --dbe-primary-color-8: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s), 
+    80%
+  );
+
+  --dbe-primary-color-9: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s), 
+    90%
+  );
+
+  --dbe-primary-color-10: hsl(
+    var(--dbe-base-color-000000-h), 
+    var(--dbe-base-color-000000-s), 
+    100%
+  );
+
+  --dbe-secondary-color-1: hsl(
+    calc(var(--dbe-base-color-000000-h) - 120), 
+    var(--dbe-base-color-000000-s), 
+    10%
+  );
+
+  --dbe-secondary-color-2: hsl(
+    calc(var(--dbe-base-color-000000-h) - 120), 
+    var(--dbe-base-color-000000-s), 
+    20%
+  );
+
+  --dbe-secondary-color-3: hsl(
+    calc(var(--dbe-base-color-000000-h) - 120), 
+    var(--dbe-base-color-000000-s), 
+    30%
+  );
+
+  --dbe-secondary-color-4: hsl(
+    calc(var(--dbe-base-color-000000-h) - 120), 
+    var(--dbe-base-color-000000-s), 
+    40%
+  );
+
+  --dbe-secondary-color-5: hsl(
+    calc(var(--dbe-base-color-000000-h) - 120), 
+    var(--dbe-base-color-000000-s), 
+    50%
+  );
+
+  --dbe-secondary-color-6: hsl(
+    calc(var(--dbe-base-color-000000-h) - 120), 
+    var(--dbe-base-color-000000-s), 
+    60%
+  );
+
+  --dbe-secondary-color-7: hsl(
+    calc(var(--dbe-base-color-000000-h) - 120), 
+    var(--dbe-base-color-000000-s), 
+    70%
+  );
+
+  --dbe-secondary-color-8: hsl(
+    calc(var(--dbe-base-color-000000-h) - 120), 
+    var(--dbe-base-color-000000-s), 
+    80%
+  );
+
+  --dbe-secondary-color-9: hsl(
+    calc(var(--dbe-base-color-000000-h) - 120), 
+    var(--dbe-base-color-000000-s), 
+    90%
+  );
+
+  --dbe-secondary-color-10: hsl(
+    calc(var(--dbe-base-color-000000-h) - 120), 
+    var(--dbe-base-color-000000-s), 
+    100%
+  );
+
+  --dbe-tertiary-color-1: hsl(
+    calc(var(--dbe-base-color-000000-h) + 120), 
+    var(--dbe-base-color-000000-s), 
+    10%
+  );
+
+  --dbe-tertiary-color-2: hsl(
+    calc(var(--dbe-base-color-000000-h) + 120), 
+    var(--dbe-base-color-000000-s), 
+    20%
+  );
+
+  --dbe-tertiary-color-3: hsl(
+    calc(var(--dbe-base-color-000000-h) + 120), 
+    var(--dbe-base-color-000000-s), 
+    30%
+  );
+
+  --dbe-tertiary-color-4: hsl(
+    calc(var(--dbe-base-color-000000-h) + 120), 
+    var(--dbe-base-color-000000-s), 
+    40%
+  );
+
+  --dbe-tertiary-color-5: hsl(
+    calc(var(--dbe-base-color-000000-h) + 120), 
+    var(--dbe-base-color-000000-s), 
+    50%
+  );
+
+  --dbe-tertiary-color-6: hsl(
+    calc(var(--dbe-base-color-000000-h) + 120), 
+    var(--dbe-base-color-000000-s), 
+    60%
+  );
+
+  --dbe-tertiary-color-7: hsl(
+    calc(var(--dbe-base-color-000000-h) + 120), 
+    var(--dbe-base-color-000000-s), 
+    70%
+  );
+
+  --dbe-tertiary-color-8: hsl(
+    calc(var(--dbe-base-color-000000-h) + 120), 
+    var(--dbe-base-color-000000-s), 
+    80%
+  );
+
+  --dbe-tertiary-color-9: hsl(
+    calc(var(--dbe-base-color-000000-h) + 120), 
+    var(--dbe-base-color-000000-s), 
+    90%
+  );
+
+  --dbe-tertiary-color-10: hsl(
+    calc(var(--dbe-base-color-000000-h) + 120), 
+    var(--dbe-base-color-000000-s), 
+    100%
+  );
+}
