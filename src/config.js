@@ -1,5 +1,5 @@
 const config = {
-  port: 3000,
+  port: 8010,
   schemeDirectory: 'src/schemes/',
   publicSchemeDirectory: 'src/schemes/public/',
 }
