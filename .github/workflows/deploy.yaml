@@ -1,21 +1,22 @@
-name: Deploy to staging.leaderon.de
+name: Deploy to colors.distur.be
 
 on: workflow_dispatch
 
 jobs:
-  build-and-deploy:
+  deploy-to-server:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout latest code
+      uses: actions/checkout@v2
 
     - name: Deploy to Server
       uses: easingthemes/ssh-deploy@main
       env:
-          SSH_PRIVATE_KEY: ${{ secrets.CONTABO_PRIVATE_KEY }}
+          SSH_PRIVATE_KEY: ${{ secrets.REMOTE_KEY }}
           SOURCE: "/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           REMOTE_PORT: ${{ secrets.REMOTE_PORT }}
-          TARGET: ${{ secrets.REMOTE_TARGET_STAGING }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
           EXCLUDE: ".github"
