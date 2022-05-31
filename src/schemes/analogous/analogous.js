@@ -9,6 +9,7 @@ const basic = {
 
       const hsl = hexToHSL('#' + schemeColor);
       const mapObject = {
+        BASE_COLOR_NAME: schemeColor,
         BASE_COLOR_HEX: '#' + schemeColor,
         BASE_COLOR_H: hsl[0],
         BASE_COLOR_S: hsl[1],
@@ -17,7 +18,7 @@ const basic = {
 
       await fs.promises.writeFile(
         config.publicSchemeDirectory + schemeName + '/' + schemeColor + '.css', 
-        data.replace(/BASE_COLOR_HEX|BASE_COLOR_H|BASE_COLOR_S|BASE_COLOR_L/g, function(matched) { 
+        data.replace(/BASE_COLOR_NAME|BASE_COLOR_HEX|BASE_COLOR_H|BASE_COLOR_S|BASE_COLOR_L/g, function(matched) { 
           return mapObject[matched]; 
         })
       );

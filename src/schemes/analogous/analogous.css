@@ -1,0 +1,186 @@
+:root {
+  --dbe-base-color-BASE_COLOR_NAME: BASE_COLOR_HEX;
+  --dbe-base-color-BASE_COLOR_NAME-h: BASE_COLOR_H;
+  --dbe-base-color-BASE_COLOR_NAME-s: BASE_COLOR_S%;
+  --dbe-base-color-BASE_COLOR_NAME-l: BASE_COLOR_L%;
+
+  --dbe-primary-color-1: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    10%
+  );
+
+  --dbe-primary-color-2: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    20%
+  );
+
+  --dbe-primary-color-3: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    30%
+  );
+
+  --dbe-primary-color-4: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    40%
+  );
+
+  --dbe-primary-color-5: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    50%
+  );
+
+  --dbe-primary-color-6: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    60%
+  );
+
+  --dbe-primary-color-7: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    70%
+  );
+
+  --dbe-primary-color-8: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    80%
+  );
+
+  --dbe-primary-color-9: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    90%
+  );
+
+  --dbe-primary-color-10: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    100%
+  );
+
+  --dbe-secondary-color-1: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) - 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    10%
+  );
+
+  --dbe-secondary-color-2: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) - 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    20%
+  );
+
+  --dbe-secondary-color-3: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) - 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    30%
+  );
+
+  --dbe-secondary-color-4: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) - 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    40%
+  );
+
+  --dbe-secondary-color-5: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) - 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    50%
+  );
+
+  --dbe-secondary-color-6: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) - 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    60%
+  );
+
+  --dbe-secondary-color-7: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) - 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    70%
+  );
+
+  --dbe-secondary-color-8: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) - 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    80%
+  );
+
+  --dbe-secondary-color-9: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) - 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    90%
+  );
+
+  --dbe-secondary-color-10: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) - 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    100%
+  );
+
+  --dbe-tertiary-color-1: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) + 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    10%
+  );
+
+  --dbe-tertiary-color-2: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) + 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    20%
+  );
+
+  --dbe-tertiary-color-3: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) + 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    30%
+  );
+
+  --dbe-tertiary-color-4: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) + 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    40%
+  );
+
+  --dbe-tertiary-color-5: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) + 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    50%
+  );
+
+  --dbe-tertiary-color-6: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) + 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    60%
+  );
+
+  --dbe-tertiary-color-7: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) + 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    70%
+  );
+
+  --dbe-tertiary-color-8: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) + 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    80%
+  );
+
+  --dbe-tertiary-color-9: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) + 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    90%
+  );
+
+  --dbe-tertiary-color-10: hsl(
+    calc(var(--dbe-base-color-BASE_COLOR_NAME-h) + 30), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s), 
+    100%
+  );
+}

@@ -1,0 +1,52 @@
+:root {
+  --dbe-base-color-BASE_COLOR_NAME: BASE_COLOR_HEX;
+  --dbe-base-color-BASE_COLOR_NAME-h: BASE_COLOR_H;
+  --dbe-base-color-BASE_COLOR_NAME-s: BASE_COLOR_S%;
+  --dbe-base-color-BASE_COLOR_NAME-l: BASE_COLOR_L%;
+
+  --dbe-shade-BASE_COLOR_NAME-1: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s),
+    10%
+  );
+  --dbe-shade-BASE_COLOR_NAME-2: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s),
+    20%
+  );
+  --dbe-shade-BASE_COLOR_NAME-3: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s),
+    30%
+  );
+  --dbe-shade-BASE_COLOR_NAME-4: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s),
+    40%
+  );
+  --dbe-shade-BASE_COLOR_NAME-5: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s),
+    50%
+  );
+  --dbe-shade-BASE_COLOR_NAME-6: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s),
+    60%
+  );
+  --dbe-shade-BASE_COLOR_NAME-7: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s),
+    70%
+  );
+  --dbe-shade-BASE_COLOR_NAME-8: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s),
+    80%
+  );
+  --dbe-shade-BASE_COLOR_NAME-9: hsl(
+    var(--dbe-base-color-BASE_COLOR_NAME-h), 
+    var(--dbe-base-color-BASE_COLOR_NAME-s),
+    90%
+  );
+}

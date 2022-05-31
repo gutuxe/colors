@@ -2,17 +2,21 @@ const fs = require('fs');
 const { config } = require('./config');
 
 // Require Schemes
-const basic = require('./schemes/basic/basic');
+const template = {
+  complementary: require('./schemes/complementary/complementary'),
+  analogous: require('./schemes/analogous/analogous'),
+  shades: require('./schemes/shades/shades')
+}
 
 const scheme = {
   getScheme: async function(schemeName, schemeColor) {
     const loneColor = schemeColor.substring(0,6);
 
     if (!fs.existsSync(config.publicSchemeDirectory + schemeName + '/' + loneColor + '.css')) {
-      if (schemeName === 'basic') {
-        await basic.prepareNewColorScheme(schemeName, loneColor);
+      if (template[schemeName]) {
+        await template[schemeName].prepareNewColorScheme(schemeName, loneColor);
       } else {
-        console.log('Scheme not found');
+        throw new Error('Scheme not found');
       }
     }
 
