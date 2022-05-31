@@ -12,29 +12,26 @@ Import a color scheme to you project. Don't care about the CSS and don't care ab
 
 ### Scheme
 
-`basic` *complete scheme*
+`complementary` Lightness steps for the specified and it's complementary color.
 
-This scheme outputs a complete configuration based on one initially spcified color.
+`analogous` Lightness steps for the specified color and two further colors (+/- 30° hue).
 
-`shades` *color steps*
+`triadic` Lightness steps for the specified color and two further colors (+/- 120° hue).
 
-This scheme outputs shades of the spcified color. This is especially useful for base colors.
-
+`shades` Lightness steps for the specified color.
 
 ### Color
 
 Define your desired color as a hex value.
+
 ## Contributing
 
 Contributions are always welcome!
-
 
 ## Authors
 
 - [@moritzgvt](https://www.github.com/moritzgvt)
 
-
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
-

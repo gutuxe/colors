@@ -8,15 +8,15 @@ app.use(express.static(config.publicSchemeDirectory));
 const { getScheme } = require('./src/scheme');
 
 app.get('/', (req, res) => {
-  res.send('Hello World!');
+  res.send('Add /scheme to your URL');
 })
 
 app.get('/scheme', (req, res) => {
-  res.send('Define your scheme!');
+  res.send('Add a scheme to your URL (e.g. /scheme/complementary/ff0000)');
 })
 
 app.get('/scheme/:scheme', (req, res) => {
-  res.send('Define your color!');
+  res.send('Add a hex color to your URL (e.g. /scheme/complementary/ff0000)');
 })
 
 app.get('/scheme/:scheme/:color', async (req, res) => {
