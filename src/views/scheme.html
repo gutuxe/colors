@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUTUXE Colors | Select a scheme</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            background-color: #171717;
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+
+            font-family: '-apple-system', '-system-ui', sans-serif;
+            font-weight: normal;
+            letter-spacing: .05em;
+            font-size: 1em;
+        }
+
+        form {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 50px 20px;
+        }
+
+        form span {
+            font-weight: normal;
+            color: #f3f3f3;
+        }
+
+        select {
+            width: min-content;
+            height: min-content;
+            border: none;
+            border-radius: 0;
+            outline: none;
+            background-color: rgba(150,150,150,.15);
+            color: #f3f3f3;
+            font-size: 1em;
+            letter-spacing: .05em;
+            margin: 0;
+            padding: .2em;
+            margin: .2em;
+            border-radius: 5px;
+        }
+
+        input[type="color"] {
+            width: 20px;
+            height: 25px;
+            border: none;
+            outline: none;
+            background-color: transparent;
+            color: #f3f3f3;
+            padding: 0;
+            margin: 0;
+            border-radius: 3px;
+        }
+
+        span#color-select {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+
+            background-color: rgba(150,150,150,.15);
+            padding: .05em .2em;
+            margin: .2em;
+            border-radius: 5px;
+        }
+
+        span#color-text {
+            margin: .2em;
+            display: inline-block;
+        }
+
+        span#color-text:focus {
+            outline: none;
+        }
+
+        select,
+        button,
+        input[type="color"] {
+            cursor: pointer;
+        }
+
+        .button-group {
+            position: fixed;
+            bottom: 50px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        code {
+            display: none;
+            font-family: '-system-ui-mono', monospace;
+            font-weight: normal;
+            letter-spacing: .05em;
+            font-size: 1em;
+            max-height: 100vh;
+            overflow-y: scroll;
+            overflow-x: none;
+            color: #f3f3f3;
+            background-color: rgba(150,150,150,.15);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        code::-webkit-scrollbar {
+            background-color: transparent;
+        }
+
+        .show {
+            display: block;
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                flex-direction: row;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-group">
+        <form>
+            <span id="url-text"></span>
+
+            <select name="scheme" id="scheme-select">
+                <option value="complementary">complementary</option>
+                <option value="analogous">analogous</option>
+                <option value="triadic">triadic</option>
+                <option value="shades">shades</option>
+            </select>
+
+            <span>/</span>
+            <span id="color-select">
+                <span id="color-text" contenteditable="true">ff0000</span>
+                <input 
+                    type="color" 
+                    id="color-input"
+                    value="#ff0000"
+                >
+            </span>
+        </form>
+    </div>
+
+    <code id="css-code"></code>
+
+    <div class="button-group">
+        <button id="copy-url">Copy URL</button>
+        <button id="copy-css">Copy CSS</button>
+    </div>
+
+    <script>
+        async function submitUrl(urlParts) {
+            const cssCode = document.getElementById('css-code');
+            const cssText = await fetch(`${urlParts.url}${urlParts.scheme}/${urlParts.color}`)
+                .then(response => response.text());
+            
+            cssCode.classList.add('show');
+            cssCode.innerText = cssText;
+
+            navigator.clipboard.writeText(cssText);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const generatedUrl = {
+                url: window.location.href.split('?')[0],
+                scheme: 'complementary',
+                color: 'ff0000'
+            }
+
+            const url = window.location.href.split('?')[0]; 
+            const urlText = document.getElementById('url-text').innerText = url;
+
+            const schemeSelect = document.getElementById('scheme-select');
+
+            schemeSelect.addEventListener('change', function() {
+                const scheme = schemeSelect.value;
+                generatedUrl.scheme = scheme;
+                submitUrl(generatedUrl);
+            });
+
+            const colorText = document.getElementById('color-text');
+            const colorInput = document.getElementById('color-input');
+            
+            colorText.addEventListener('blur', function() {
+                const color = colorText.innerText;
+
+                if (color.length === 3) {
+                    const extendedColor = color[0].repeat(2) + color[1].repeat(2) + color[2].repeat(2);
+                    colorText.innerText = extendedColor;
+                    submitUrl(generatedUrl);
+                }
+            });
+
+            colorText.addEventListener('keyup', function() {
+                const color = colorText.innerText;
+
+                if (color.length === 6) {
+                    colorInput.value = '#' + color;
+                    generatedUrl.color = color;
+                    submitUrl(generatedUrl);
+                }
+
+                if (color.length === 3) {
+                    const extendedColor = color[0].repeat(2) + color[1].repeat(2) + color[2].repeat(2);
+                    colorInput.value = '#' + extendedColor;
+                    generatedUrl.color = extendedColor;
+                    submitUrl(generatedUrl);
+                }
+            });
+
+            colorInput.addEventListener('change', function() {
+                const color = colorInput.value.replace(/^#/, "");
+                colorText.innerText = color;
+                generatedUrl.color = color;
+            });
+
+            const copyUrl = document.getElementById('copy-url');
+            const showCss = document.getElementById('show-css');
+
+            copyUrl.addEventListener('click', function() {
+                const url = `${generatedUrl.url}${generatedUrl.scheme}/${generatedUrl.color}`;
+                navigator.clipboard.writeText(url);
+            });
+
+            copyCss.addEventListener('click', function() {
+                const css = document.getElementById('css-code').innerText;
+                navigator.clipboard.writeText(css);
+            });
+        });
+    </script>
+</body>
+</html>

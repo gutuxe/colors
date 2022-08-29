@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 
 const { config } = require('./src/config');
 
@@ -8,15 +9,15 @@ app.use(express.static(config.publicSchemeDirectory));
 const { getScheme } = require('./src/scheme');
 
 app.get('/', (req, res) => {
-  res.send('Add /scheme to your URL');
+  res.redirect('/scheme');
 })
 
 app.get('/scheme', (req, res) => {
-  res.send('Add a scheme to your URL (e.g. /scheme/complementary/ff0000)');
+  res.sendFile(path.join(__dirname, '/src/views/scheme.html'));
 })
 
 app.get('/scheme/:scheme', (req, res) => {
-  res.send('Add a hex color to your URL (e.g. /scheme/complementary/ff0000)');
+  res.sendFile(path.join(__dirname, '/src/views/color.html'));
 })
 
 app.get('/scheme/:scheme/:color', async (req, res) => {
