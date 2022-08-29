@@ -12,15 +12,16 @@
         }
 
         body {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
             gap: 20px;
             background-color: #171717;
             height: 100vh;
             width: 100vw;
             margin: 0;
 
-            font-family: '-apple-system', '-system-ui', sans-serif;
+            font-family: '-apple-system-mono', '-system-ui-mono', monospace;
             font-weight: normal;
             letter-spacing: .05em;
             font-size: 1em;
@@ -54,6 +55,7 @@
             padding: .2em;
             margin: .2em;
             border-radius: 5px;
+            font-family: '-apple-system-mono', '-system-ui-mono', monospace;
         }
 
         input[type="color"] {
@@ -95,28 +97,16 @@
             cursor: pointer;
         }
 
-        .button-group {
-            position: fixed;
-            bottom: 50px;
-            width: 100%;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .form-group {
+        #form-group {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: 10px;
+            width: 50%;
         }
 
         code {
-            display: none;
             font-family: '-system-ui-mono', monospace;
             font-weight: normal;
             letter-spacing: .05em;
@@ -128,14 +118,17 @@
             background-color: rgba(150,150,150,.15);
             padding: 10px;
             border-radius: 5px;
+            width: 50%;
         }
 
         code::-webkit-scrollbar {
             background-color: transparent;
         }
 
-        .show {
-            display: block;
+        #copy-css {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
         }
 
         @media screen and (max-width: 600px) {
@@ -146,7 +139,7 @@
     </style>
 </head>
 <body>
-    <div class="form-group">
+    <div id="form-group">
         <form>
             <span id="url-text"></span>
 
@@ -166,22 +159,20 @@
                     value="#ff0000"
                 >
             </span>
+            <button id="copy-url" class="copy-button">Copy</button>
         </form>
     </div>
 
     <code id="css-code"></code>
 
-    <div class="button-group">
-        <button id="copy-url">Copy URL</button>
-        <button id="copy-css">Copy CSS</button>
-    </div>
+    <button id="copy-css" class="copy-button">Copy</button>
 
     <script>
         async function submitUrl(urlParts) {
             const cssCode = document.getElementById('css-code');
             const cssText = await fetch(`${urlParts.url}${urlParts.scheme}/${urlParts.color}`)
                 .then(response => response.text());
-            
+                
             cssCode.classList.add('show');
             cssCode.innerText = cssText;
 
@@ -189,13 +180,16 @@
         }
 
         document.addEventListener('DOMContentLoaded', function() {
+            const url = window.location.href.split('?')[0].endsWith('/') 
+                ? window.location.href.split('?')[0] 
+                : window.location.href.split('?')[0] + '/'; 
+
             const generatedUrl = {
-                url: window.location.href.split('?')[0],
+                url: url,
                 scheme: 'complementary',
                 color: 'ff0000'
-            }
+            };
 
-            const url = window.location.href.split('?')[0]; 
             const urlText = document.getElementById('url-text').innerText = url;
 
             const schemeSelect = document.getElementById('scheme-select');
@@ -240,10 +234,11 @@
                 const color = colorInput.value.replace(/^#/, "");
                 colorText.innerText = color;
                 generatedUrl.color = color;
+                submitUrl(generatedUrl);
             });
 
             const copyUrl = document.getElementById('copy-url');
-            const showCss = document.getElementById('show-css');
+            const copyCss = document.getElementById('copy-css');
 
             copyUrl.addEventListener('click', function() {
                 const url = `${generatedUrl.url}${generatedUrl.scheme}/${generatedUrl.color}`;
