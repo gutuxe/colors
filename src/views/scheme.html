@@ -246,12 +246,14 @@
             const copyUrl = document.getElementById('copy-url');
             const copyCss = document.getElementById('copy-css');
 
-            copyUrl.addEventListener('click', function() {
+            copyUrl.addEventListener('click', function(e) {
+                e.preventDefault();
                 const url = `${generatedUrl.url}${generatedUrl.scheme}/${generatedUrl.color}`;
                 navigator.clipboard.writeText(url);
             });
 
-            copyCss.addEventListener('click', function() {
+            copyCss.addEventListener('click', function(e) {
+                e.preventDefault();
                 const css = document.getElementById('css-code').innerText;
                 navigator.clipboard.writeText(css);
             });
